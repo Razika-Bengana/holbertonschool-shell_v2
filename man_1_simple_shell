@@ -1,0 +1,78 @@
+.TH hsh "1" "August 1st, 2022" "V1.0" "man page" "hsh - simple_shell project"
+
+
+.SH NAME
+
+hsh \- simple_shell project
+
+hsh : command line interpreter for the simple_shell project
+
+
+.SH SYNOPSIS
+
+- run "./hsh" (interactive mode)
+
+- run  "echo "/bin/(command)" | ./hsh" (non-interactive mode)
+
+
+.SH DESCRIPTION
+
+hsh is a part of the simple_shell project, a simple and limited recreation of the famous Unix shell program.
+
+hsh permits to run simple_shell in both interactive and non-interactive mode.
+
+It reads and implements basic commands input by the user.
+
+
+.SH COMPILATION
+
+hsh is compiled on UBUNTU 20.04.4 LTS with GCC 9.4.0., and flags -Wall, -Werror, -Wextra, and -pedantic.
+
+
+.SH USAGE
+
+When typing a command, simple_shell does these following steps :
+
+- it tokenizes the string that represents the command which has been entered, and an array of pointer is created
+
+- it looks if the command is an alias, or a buit-in command that is placed on the PATH variable or not,
+  by merging the pointer of the command with another pointer of each directory placed in PATH
+  (each folder in the environment PATH is separated by the ':' symbol)
+
+- if a match between the 2 pointers is finded, it executes the command by forking the program that is running.
+  The process creates another program, that is the same, but the value of the PID differ
+  (it is the concept of 'father process' and 'child process')
+
+- then, after this execution, the shell program shutdown the search, frees the memory, and put again the prompt for the next input of the user.
+
+
+If the user wants to quit the program, he can enter 'exit' or do Ctrl + D.
+
+
+.SH EXAMPLES
+
+root@user-name:~/holbertonschool-simple_shell# ./hsh
+
+$ (enter your command here, for example ->  ls)
+
+$ AUTHORS  README.md  man_1_simple_shell
+
+$ pwd
+
+$ /root/holbertonschool-simple_shell
+
+$
+
+^D
+(ctrl + D to quit the program)
+
+root@user-name:~/holbertonschool-simple_shell# echo "/bin/ls" | ./hsh
+
+AUTHORS  README.md  man_1_simple_shell
+
+root@user-name:~/holbertonschool-simple_shell#
+
+
+.SH AUTHORS
+
+Written by Chong LEANG UENG and Razika BENGANA
