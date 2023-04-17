@@ -17,7 +17,5 @@ int readcmd(void)
 	free(line_buf);
 	line_buf = NULL;
 
-	return EXIT_SUCCESS;
+	return (EXIT_SUCCESS);
 }
-
-

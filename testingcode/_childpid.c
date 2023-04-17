@@ -12,7 +12,7 @@ int main(void)
 	pid_t childs;
 	int i, state;
 
-	for (i = 0; i <5; i++)
+	for (i = 0; i < 5; i++)
 	{
 		childs = fork();
 		if (childs != 0)
