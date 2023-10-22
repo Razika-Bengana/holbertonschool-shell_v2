@@ -1,5 +1,7 @@
 #include "shell.h"
 
+char **my_environ;
+
 /**
   * _printenv - program that prints the environment variables to the standard output
   *
@@ -13,8 +15,6 @@
   *
   * Return: nothing (void)
   */
-
-char **my_environ;
 
 void print_env(void)
 {
