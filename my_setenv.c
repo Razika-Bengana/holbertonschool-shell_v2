@@ -2,6 +2,22 @@
 
 char **my_environ;
 
+/**
+  * copy_environ - program that creates a copy of the environment variables
+  *
+  * this function creates a copy of the environment variables stored in the 'environ'
+  * global variable;
+  * it calculates the number of environment variables, allocates memory for the copy,
+  * and duplicates each environment variable using '_strdup';
+  * the copied environment is terminated with a NULL pointer to indicate the end;
+  *
+  * if any memory allocation fails, the function returns NULL, and it handles
+  * errors using 'perror';
+  *
+  * Return: a dynamically allocated array containing a copy of the environment variables,
+  * or NULL on memory allocation failure
+  */
+
 char **copy_environ(void)
 {
     int i, len;
@@ -24,6 +40,26 @@ char **copy_environ(void)
     new_environ[len] = NULL;
     return new_environ;
 }
+
+/**
+  * my_setenv - program that sets or updates an environment variable
+  *
+  * @name: the name of the environment variable
+  * @value: the value to set for the environment variable
+  *
+  * this function sets or updates an environment variable with the specified 'name'
+  * and 'value';
+  * it first calculates the total length needed for the new environment
+  * variable entry and allocates memory for it using 'calloc';
+  * if the environment variable already exists, it updates its value; otherwise,
+  * it creates a new entry;
+  * if memory allocation fails at any point, the function handles errors using 'perror';
+  *
+  * the function ensures that the environment is correctly terminated with a NULL
+  * pointer and updates the global 'my_environ' variable with the new environment;
+  *
+  * Return: 0 on success, -1 on memory allocation failure
+  */
 
 int my_setenv(const char *name, const char *value)
 {

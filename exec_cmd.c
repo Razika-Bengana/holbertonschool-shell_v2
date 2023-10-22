@@ -1,9 +1,22 @@
 #include "shell.h"
 
 /**
-  * func_exec - function that executes the commands
-  * @args: list of commands
-  * Return: 1
+  * exec_cmd - program that executes a command with the given arguments
+  *
+  * @args: an array containing the command and its arguments
+  *
+  * this function is responsible for executing a command with the provided
+  * arguments;
+  * it first forks a new process to run the command;
+  * in the child process, it checks if the command is an absolute path or in
+  * the system's PATH;
+  * if it's in the PATH, it retrieves the full path using 'get_path'function;
+  * then, it attempts to execute the command using 'execve' with the
+  * provided arguments and environment variables
+  * (using 'my_environ' instead of 'environ');
+  * in case of any errors, it prints appropriate error messages
+  *
+  * Return: 1 on successful execution, 0 on failure
   */
 
 char **my_environ;

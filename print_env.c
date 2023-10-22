@@ -1,7 +1,17 @@
 #include "shell.h"
 
 /**
-  * _printenv - function that print the environment variables
+  * _printenv - program that prints the environment variables to the standard output
+  *
+  * this function is responsible for printing the environment variables to the
+  * standard output (usually the terminal);
+  * it iterates through the 'my_environ' array, which holds environment variable
+  * definitions, and prints each variable followed by a newline character;
+  * the length of each environment variable is determined using the '_strlen'
+  * function, and 'write' is used to output the variable's contents to the standard
+  * output;
+  *
+  * Return: nothing (void)
   */
 
 char **my_environ;

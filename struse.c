@@ -1,10 +1,12 @@
 #include "shell.h"
 
 /**
- * _strcat - Concatonates two strings
- * @dest: The destination string
- * @src: The source string
- * Return: dest
+ * _strcat - program that concatenates two strings
+ *
+ * @dest: the destination string to which 'src' will be appended
+ * @src: the source string that will be appended to 'dest'
+ *
+ * Return: a pointer to the modified 'dest' string
  */
 
 char *_strcat(char *dest, const char *src)
@@ -23,11 +25,14 @@ char *_strcat(char *dest, const char *src)
 }
 
 /**
-  * _strcmp - function that compare two strings
-  * @s1: String 1
-  * @s2: String 2
-  * Return: 0 if s1 == s2, negative value if s1 < s2 and positive if s1 > s2
-  */
+ * _strcmp - program that compares two strings
+ *
+ * @s1: the first string to be compared
+ * @s2: the second string to be compared
+ *
+ * Return: 0 if 's1' is equal to 's2', a positive value if 's1' is greater,
+ * and a negative value if 's2' is greater
+ */
 
 int _strcmp(char *s1, char *s2)
 {
@@ -42,9 +47,11 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * _strlen - size of string
- * @s: string to find size
- * Return: string size
+ * _strlen - program that calculates the length of a string
+ *
+ * @s: the input string
+ *
+ * Return: the length of the string 's'
  */
 
 int _strlen(const char *s)
@@ -59,11 +66,14 @@ int _strlen(const char *s)
 }
 
 /**
- * *_strncmp - function that compare n characters of two strings
- * @s1: String 1
- * @s2: String 2
- * @n: numbers of characters
- * Return: 0 if s1 = s2, negative value if s1 < s2 and positive if s1 > s2
+ * _strncmp - program that compares two strings up to a specified length
+ *
+ * @s1: the first string to be compared
+ * @s2: the second string to be compared
+ * @n: the maximum number of characters to compare
+ *
+ * Return: 0 if the first 'n' characters of 's1' are equal to 's2', a positive
+ * value if 's1' is greater, and a negative value if 's2' is greater
  */
 
 int _strncmp(const char *s1, const char *s2, int n)
@@ -78,13 +88,14 @@ int _strncmp(const char *s1, const char *s2, int n)
 	return (0);
 }
 
-#include "shell.h"
-
 /**
- * _strdup - Duplicate a string
- * @str: The string to duplicate
- * Return: A pointer to the newly allocated duplicate string
+ * _strdup - program that duplicates a string
+ *
+ * @str: the input string to be duplicated
+ *
+ * Return: a pointer to a new string containing a copy of 'str'
  */
+
 char *_strdup(const char *str)
 {
     char *dup_str;

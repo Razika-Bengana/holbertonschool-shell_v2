@@ -1,8 +1,17 @@
 #include "shell.h"
 
 /**
-  * func_read - function that reads the stdin
-  * Return: line if succesful or NULL if failed
+  * func_read - program that reads a line of input from the standard input
+  *
+  * this function is responsible for reading a line of input from the standard
+  * input (usually user input);
+  * it uses the `getline` function to dynamically allocate memory for the input line,
+  * taking care of resizing the buffer as needed;
+  * the function trims leading and trailing whitespace from the input
+  * line and checks for empty lines or lines containing only a newline character;
+  *
+  * Return: a dynamically allocated string containing the input line, or NULL
+  * if no valid input was provided
   */
 
 char *func_read(void)

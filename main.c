@@ -1,8 +1,23 @@
 #include "shell.h"
 
 /**
-  * main - start the shell
-  * Return: 1
+  * main - The entry point of a simple shell program
+  *
+  * this function serves as the entry point of a simple shell program;
+  * it initializes necessary variables and structures, sets up the signal handler
+  * for Ctrl+C (SIGINT), and enters a loop where it repeatedly reads user input
+  * and executes commands until the user exits;
+  *
+  * within the loop, the function checks if the shell is running in interactive
+  * mode and prints a prompt if it is;
+  * it reads a line of input using the 'func_read' function and processes user commands;
+  * it supports built-in commands like "exit," "env," and "cd" (handled by other functions)
+  * and executes other shell commands using the 'exec_cd' function;
+  *
+  * the function also handles memory cleanup and frees allocated resources
+  * before exiting the shell;
+  *
+  * Return: 0 on successful execution, 1 on failure
   */
 
 char **my_environ = NULL;

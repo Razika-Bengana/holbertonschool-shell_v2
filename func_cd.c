@@ -1,5 +1,29 @@
 #include "shell.h"
 
+/**
+  * func_cd - program that changes the current working directory
+  *
+  * @args: an array containing the 'cd' command and its arguments
+  *
+  * this function is responsible for changing the current working directory in a
+  * shell program;
+  * it takes an array of command and arguments as input, where 'args[0]' is expected
+  * to be "cd" and 'args[1]' (if present) is the target directory to change to;
+  * it supports the following behaviors:
+  *
+  * - if 'args[1]' is not provided, it attempts to change to the user's home
+  *   directory and updates the environment variable 'PWD' accordingly
+  * - if 'args[1]' is "-" (dash), it changes to the previous working directory
+  *   as recorded in the 'OLDPWD' environment variable
+  * - if 'args[1]' is a valid directory path, it attempts to change to that
+  *   directory and updates 'PWD' and 'OLDPWD' accordingly
+  *
+  * this function also handles error conditions and prints appropriate error
+  * messages when necessary
+  *
+  * Return: 1 on success, -1 on failure.
+  */
+
 int func_cd(char **args)
 {
     char *home = NULL;

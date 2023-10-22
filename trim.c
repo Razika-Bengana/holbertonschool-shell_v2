@@ -1,10 +1,21 @@
 #include "shell.h"
 
 /**
- * trim - function that trim string
- * @str: String to trim
- * Return: Char
- */
+  * trim - program that removes leading and trailing whitespace from a string
+  *
+  * @str: the input string to be trimmed
+  *
+  * this function removes any leading and trailing whitespace characters
+  * (space and tab) from the input string 'str';
+  * it works by finding the first non-whitespace character from the beginning
+  * and the end of the string and then adjusting the string's pointers and
+  * null-terminating it accordingly to create a trimmed version of the string;
+  *
+  * Return: if 'str' is NULL or an empty string, the function returns the input string
+  * as is;
+  * otherwise, it returns a pointer to the trimmed version of 'str'
+  */
+
 char *trim(char *str)
 {
 	char *front = str;
