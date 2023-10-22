@@ -1,7 +1,7 @@
 #include "shell.h"
 
-char **my_environ;
 
+char **my_environ;
 extern char **environ;
 
 

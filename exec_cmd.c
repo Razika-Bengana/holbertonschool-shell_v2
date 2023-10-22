@@ -19,10 +19,6 @@
   * Return: 1 on successful execution, 0 on failure
   */
 
-
-extern char **my_environ;
-
-
 int exec_cmd(char **args)
 {
 	pid_t my_pid;

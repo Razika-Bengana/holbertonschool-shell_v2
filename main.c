@@ -20,8 +20,6 @@
   * Return: 0 on successful execution, 1 on failure
   */
 
-
-
 int main(void)
 {
     char old_pwd[1024];

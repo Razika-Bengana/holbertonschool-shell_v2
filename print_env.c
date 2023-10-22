@@ -14,10 +14,6 @@
   * Return: nothing (void)
   */
 
-
-extern char **my_environ;
-
-
 void print_env(void)
 {
 	int i;
