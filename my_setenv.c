@@ -70,6 +70,8 @@ int my_setenv(const char *name, const char *value)
 
     free(my_environ);
     my_environ = new_environ;
+    environ = my_environ;
+
 
     return (0);
 }

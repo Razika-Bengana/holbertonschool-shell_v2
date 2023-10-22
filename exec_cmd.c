@@ -5,6 +5,7 @@
   * @args: list of commands
   * Return: 1
   */
+char **my_environ;
 
 int exec_cmd(char **args)
 {
@@ -41,7 +42,7 @@ int exec_cmd(char **args)
 		}
 		else
         {
-            execve(getcmd, args, NULL);
+            execve(getcmd, args, my_environ);
         }
 	}
 	else
