@@ -88,60 +88,6 @@ int _strncmp(const char *s1, const char *s2, int n)
 	return (0);
 }
 
-/**
- * _strdup - program that duplicates a string
- *
- * @str: the input string to be duplicated
- *
- * Return: a pointer to a new string containing a copy of 'str'
- */
-
-char *_strdup(const char *str)
-{
-    char *dup_str;
-    int length = 0;
-
-    if (str == NULL)
-        return NULL;
-
-    while (str[length])
-        length++;
-
-    dup_str = malloc(length + 1);
-    if (dup_str == NULL)
-    {
-        perror("malloc");
-        return NULL;
-    }
-
-    for (int i = 0; i <= length; i++)
-        dup_str[i] = str[i];
-
-    return dup_str;
-}
-
-
-char *_strncat(char *dest, const char *src, size_t n)
-{
-    char *original_dest = dest;
-
-    while (*dest != '\0')
-    {
-        dest++;
-    }
-
-    while (n > 0 && *src != '\0')
-    {
-        *dest = *src;
-        dest++;
-        src++;
-        n--;
-    }
-
-    *dest = '\0';
-
-    return (original_dest);
-}
 
 
 
