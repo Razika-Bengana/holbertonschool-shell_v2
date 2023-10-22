@@ -14,7 +14,7 @@ char **copy_environ(void)
     }
     for (i = 0; i < len; i++)
     {
-        new_environ[i] = strdup(environ[i]);
+        new_environ[i] = _strdup(environ[i]);
         if (new_environ[i] == NULL)
         {
             perror("strdup");
@@ -29,8 +29,8 @@ int my_setenv(const char *name, const char *value)
 {
     int i;
     char *new_entry;
-    int len_name = strlen(name);
-    int len_value = strlen(value);
+    int len_name = _strlen(name);
+    int len_value = _strlen(value);
     int total_len = len_name + len_value + 2;
 
     new_entry = calloc(total_len, sizeof(char));
@@ -39,13 +39,13 @@ int my_setenv(const char *name, const char *value)
         perror("calloc");
         return (-1);
     }
-    strcat(new_entry, name);
-    strcat(new_entry, "=");
-    strcat(new_entry, value);
+    _strcat(new_entry, name);
+    _strcat(new_entry, "=");
+    _strcat(new_entry, value);
 
     for (i = 0; my_environ[i]; i++)
     {
-        if (strncmp(my_environ[i], name, len_name) == 0 && my_environ[i][len_name] == '=')
+        if (_strncmp(my_environ[i], name, len_name) == 0 && my_environ[i][len_name] == '=')
         {
             free(my_environ[i]);
             my_environ[i] = new_entry;
@@ -70,9 +70,6 @@ int my_setenv(const char *name, const char *value)
 
     free(my_environ);
     my_environ = new_environ;
-
-    environ = my_environ;
-
 
     return (0);
 }

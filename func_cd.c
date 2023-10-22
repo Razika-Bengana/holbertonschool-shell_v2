@@ -14,7 +14,7 @@ int func_cd(char **args)
 
     if (args[1] == NULL)
     {
-        home = getenv("HOME");
+        home = get_env("HOME");
         if (home == NULL)
         {
             perror("getenv");
@@ -28,7 +28,7 @@ int func_cd(char **args)
         /* Gérer la commande cd - */
     else if (_strcmp(args[1], "-") == 0)
     {
-        char *oldpwd = getenv("OLDPWD");
+        char *oldpwd = get_env("OLDPWD");
         if (oldpwd != NULL)
         {
             if (chdir(oldpwd) != 0)
