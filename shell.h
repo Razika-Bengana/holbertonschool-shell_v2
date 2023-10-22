@@ -13,7 +13,9 @@
 #include <errno.h>
 #include <linux/limits.h>
 
+
 extern char **environ;
+
 
 char *_strcat(char *dest, const char *src);
 int _strcmp(char *s1, char *s2);
