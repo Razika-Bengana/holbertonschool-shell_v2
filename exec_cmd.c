@@ -54,7 +54,7 @@ int exec_cmd(char **args)
 		}
 		else
         {
-            execve(getcmd, args, NULL);
+            execve(getcmd, args, environ);
         }
 	}
 	else
