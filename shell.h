@@ -15,10 +15,12 @@
 
 extern char **environ;
 
-char *_strcat(char *dest, char *src);
+char *_strcat(char *dest, const char *src);
 int _strcmp(char *s1, char *s2);
-int _strlen(char *s);
-int _strncmp(char *s1, char *s2, int n);
+int _strlen(const char *s);
+int _strncmp(const char *s1, const char *s2, int n);
+char *_strdup(const char *str);
+
 char *func_read(void);
 int exec_cmd(char **args);
 void free_grid(char **grid);

@@ -7,7 +7,7 @@
  * Return: dest
  */
 
-char *_strcat(char *dest, char *src)
+char *_strcat(char *dest, const char *src)
 {
 	int i, j;
 
@@ -47,7 +47,7 @@ int _strcmp(char *s1, char *s2)
  * Return: string size
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int i = 0;
 
@@ -66,7 +66,7 @@ int _strlen(char *s)
  * Return: 0 if s1 = s2, negative value if s1 < s2 and positive if s1 > s2
  */
 
-int _strncmp(char *s1, char *s2, int n)
+int _strncmp(const char *s1, const char *s2, int n)
 {
 	int i;
 
@@ -77,3 +77,35 @@ int _strncmp(char *s1, char *s2, int n)
 	}
 	return (0);
 }
+
+#include "shell.h"
+
+/**
+ * _strdup - Duplicate a string
+ * @str: The string to duplicate
+ * Return: A pointer to the newly allocated duplicate string
+ */
+char *_strdup(const char *str)
+{
+    char *dup_str;
+    int length = 0;
+
+    if (str == NULL)
+        return NULL;
+
+    while (str[length])
+        length++;
+
+    dup_str = malloc(length + 1);
+    if (dup_str == NULL)
+    {
+        perror("malloc");
+        return NULL;
+    }
+
+    for (int i = 0; i <= length; i++)
+        dup_str[i] = str[i];
+
+    return dup_str;
+}
+
