@@ -1,7 +1,7 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-extern char **my_environ;
+extern char **environ;
 
 
 #include <stdio.h>

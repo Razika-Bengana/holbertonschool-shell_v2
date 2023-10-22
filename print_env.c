@@ -19,10 +19,10 @@ void print_env(void)
 	int i;
 	int lengh;
 
-	for (i = 0; my_environ[i]; i++)
+	for (i = 0; environ[i]; i++)
 	{
-		lengh = _strlen(my_environ[i]);
-		write(1, my_environ[i], lengh);
+		lengh = _strlen(environ[i]);
+		write(1, environ[i], lengh);
 		write(1, "\n", 1);
 	}
 }
