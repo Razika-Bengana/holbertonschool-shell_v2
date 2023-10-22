@@ -2,6 +2,9 @@
 
 char **my_environ;
 
+extern char **environ;
+
+
 /**
   * copy_environ - program that creates a copy of the environment variables
   *
