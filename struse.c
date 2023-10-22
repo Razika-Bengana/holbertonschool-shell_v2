@@ -88,6 +88,37 @@ int _strncmp(const char *s1, const char *s2, int n)
 	return (0);
 }
 
+#include <stdio.h>
+
+char *_strstr(char *haystack, char *needle)
+{
+    char *p1 = haystack;
+    char *p2 = needle;
+    char *p1_adv = NULL;
+
+    if (*needle == '\0')
+        return haystack;
+
+    while (*p1 != '\0')
+    {
+        p1_adv = p1;
+
+        while (*p1 && *p2 && (*p1 == *p2))
+        {
+            p1++;
+            p2++;
+        }
+
+        if (*p2 == '\0')
+            return p1_adv;
+
+        p2 = needle;
+        p1 = p1_adv + 1;
+    }
+
+    return NULL;
+}
+
 
 
 
