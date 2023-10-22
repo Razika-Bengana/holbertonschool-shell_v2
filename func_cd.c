@@ -69,5 +69,5 @@ int func_cd(char **args)
     my_setenv("PWD", new_pwd);
     my_setenv("OLDPWD", old_pwd);
 
-    return (0);
+    return (1);
 }
