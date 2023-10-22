@@ -3,7 +3,7 @@
 char **my_environ;
 
 /**
-  * _printenv - program that prints the environment variables to the standard output
+  * print_env - program that prints the environment variables to the standard output
   *
   * this function is responsible for printing the environment variables to the
   * standard output (usually the terminal);
