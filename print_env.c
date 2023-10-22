@@ -4,7 +4,7 @@
   * _printenv - function that print the environment variables
   */
 
-void _printenv(void)
+void print_env(void)
 {
 	int i;
 	int lengh;

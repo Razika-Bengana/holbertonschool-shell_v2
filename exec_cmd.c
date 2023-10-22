@@ -6,7 +6,7 @@
   * Return: 1
   */
 
-int func_exec(char **args)
+int exec_cmd(char **args)
 {
 	pid_t my_pid;
 	char *getcmd = args[0];
@@ -40,7 +40,9 @@ int func_exec(char **args)
 			return (0);
 		}
 		else
-				execve(getcmd, args, NULL);
+        {
+            execve(getcmd, args, NULL);
+        }
 	}
 	else
 	{

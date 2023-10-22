@@ -5,11 +5,20 @@
   * Return: 1
   */
 
+char **my_environ = NULL;
+
 int main(void)
 {
+    my_environ = copy_environ();
+
+    if (my_environ == NULL)
+    {
+        return 1;
+    }
 	int status = 1;
 	char *line;
 	char **args;
+    int i;
 
 	signal(SIGINT, ctrl_c);
 	while (status)
@@ -27,7 +36,7 @@ int main(void)
 		}
 		else if (_strcmp(line, "env") == 0)
 		{
-			_printenv();
+			print_env();
 			free(line);
 			continue;
 		}
@@ -40,9 +49,17 @@ int main(void)
 			continue;
 		}
 		if (line[0] != '\n' || line[1] != '\0')
-			status = func_exec(args);
+        {
+            status = exec_cd(args);
+        }
 		free(line);
 		free(args);
 	}
-	return (0);
+    for (i = 0; my_environ[i]; i++)
+    {
+        free(my_environ[i]);
+    }
+    free(my_environ);
+
+    return (0);
 }
