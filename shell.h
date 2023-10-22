@@ -14,7 +14,7 @@
 #include <linux/limits.h>
 
 
-extern char **environ;
+extern char **my_environ;
 
 
 char *_strcat(char *dest, const char *src);

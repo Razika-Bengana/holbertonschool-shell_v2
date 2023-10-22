@@ -20,7 +20,9 @@
   * Return: 0 on successful execution, 1 on failure
   */
 
+
 char **my_environ = NULL;
+
 
 int main(void)
 {

@@ -14,7 +14,9 @@
   * Return: a pointer to the value of the environment variable or NULL if not found
   */
 
-char **my_environ;
+
+extern char **my_environ;
+
 
 char *get_env(char *getcmd)
 {
