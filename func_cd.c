@@ -2,7 +2,7 @@
 
 int func_cd(char **args)
 {
-    char *home;
+    char *home = NULL;
     char old_pwd[1024];
     char new_pwd[1024];
 
@@ -24,6 +24,10 @@ int func_cd(char **args)
         {
             perror("chdir");
         }
+        else
+        {
+            printf("Directory changed to %s\n", home);
+        }
     }
         /* Gérer la commande cd - */
     else if (_strcmp(args[1], "-") == 0)
@@ -34,6 +38,10 @@ int func_cd(char **args)
             if (chdir(oldpwd) != 0)
             {
                 perror("chdir");
+            }
+            else
+            {
+                printf("Directory changed to %s\n", oldpwd);
             }
         }
         else
@@ -46,6 +54,10 @@ int func_cd(char **args)
         if (chdir(args[1]) != 0)
         {
             perror("chdir");
+        }
+        else
+        {
+            printf("Directory changed to %s\n", args[1]);
         }
     }
 
