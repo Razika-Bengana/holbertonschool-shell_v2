@@ -27,7 +27,6 @@ int main(void)
     char **args;
 
     signal(SIGINT, ctrl_c);
-
     while (status)
     {
         status = isatty(0);
@@ -47,27 +46,18 @@ int main(void)
             free(line);
             continue;
         }
-
         args = func_split(line);
         if (args == NULL)
         {
             free_grid(args);
             free(line);
+            free(args);
             continue;
         }
-
-        if (_strstr(line, " > ") != NULL)
-        {
-            handle_command_with_redirection(args);
-        }
-        else
-        {
+        if (line[0] != '\n' || line[1] != '\0')
             status = exec_cmd(args);
-        }
-
         free(line);
         free(args);
     }
-
     return (0);
 }

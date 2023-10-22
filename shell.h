@@ -16,8 +16,6 @@ extern char **environ;
 #include <errno.h>
 #include <linux/limits.h>
 
-#include <fcntl.h>
-
 
 char *_strcat(char *dest, const char *src);
 int _strcmp(char *s1, char *s2);
@@ -34,11 +32,6 @@ void print_env(void);
 void ctrl_c(int signal);
 char **split_env(char *path);
 char *trim(char *str);
-
-/* New implementation */
-void handle_redirection(char *command[], char *file);
-void handle_command_with_redirection(char **args);
-char *_strstr(char *haystack, char *needle);
 
 
 #endif /* SHELL_H */
