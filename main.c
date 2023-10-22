@@ -21,8 +21,6 @@
   */
 
 
-char **my_environ = NULL;
-
 
 int main(void)
 {

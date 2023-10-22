@@ -1,6 +1,9 @@
 #ifndef SHELL_H
 #define SHELL_H
 
+extern char **my_environ;
+
+
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -12,9 +15,6 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <linux/limits.h>
-
-
-extern char **my_environ;
 
 
 char *_strcat(char *dest, const char *src);
