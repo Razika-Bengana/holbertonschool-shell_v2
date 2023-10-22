@@ -28,9 +28,17 @@ int func_cd(char **args)
         /* Gérer la commande cd - */
     else if (_strcmp(args[1], "-") == 0)
     {
-        if (chdir(getenv("OLDPWD")) != 0)
+        char *oldpwd = getenv("OLDPWD");
+        if (oldpwd != NULL)
         {
-            perror("chdir");
+            if (chdir(oldpwd) != 0)
+            {
+                perror("chdir");
+            }
+        }
+        else
+        {
+            fprintf(stderr, "OLDPWD not set\n");
         }
     }
     else

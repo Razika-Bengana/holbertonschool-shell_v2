@@ -9,12 +9,21 @@ char **my_environ = NULL;
 
 int main(void)
 {
+    char old_pwd[1024];
     my_environ = copy_environ();
-
     if (my_environ == NULL)
     {
+        perror("Failed to initialize my_environ.");
         return 1;
     }
+    if (getcwd(old_pwd, sizeof(old_pwd)) == NULL)
+    {
+        perror("getcwd");
+        return 1;
+    }
+    my_setenv("OLDPWD", old_pwd);
+
+
 	int status = 1;
 	char *line;
 	char **args;
