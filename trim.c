@@ -9,7 +9,7 @@ char *trim(char *str)
 {
 	char *front = str;
 	char *end = NULL;
-	int len = 0;
+	int len;
 
 	if (str == NULL)
 		return (NULL);
