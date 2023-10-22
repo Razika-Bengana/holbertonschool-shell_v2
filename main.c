@@ -55,7 +55,7 @@ int main(void)
             continue;
         }
         if (line[0] != '\n' || line[1] != '\0')
-            status = exec_cd(args);
+            status = exec_cmd(args);
         free(line);
         free(args);
     }

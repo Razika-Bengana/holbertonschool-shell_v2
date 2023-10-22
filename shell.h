@@ -37,10 +37,6 @@ char *trim(char *str);
 
 
 /* New implementation */
-int func_cd(char **args);
-int exec_cd(char **args);
-int my_setenv(const char *name, const char *value);
-char **copy_environ(void);
 
 
 #endif /* SHELL_H */
