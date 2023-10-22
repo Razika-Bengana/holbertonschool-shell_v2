@@ -6,15 +6,17 @@
  * Return: the environment variable
  */
 
+char **my_environ;
+
 char *get_env(char *getcmd)
 {
 	int i, size;
 
 	size = _strlen(getcmd);
-	for (i = 0; environ[i]; i++)
+	for (i = 0; my_environ[i]; i++)
 	{
-		if (_strncmp(environ[i], getcmd, size) == 0)
-			return (environ[i] + size + 1);
+		if (_strncmp(my_environ[i], getcmd, size) == 0)
+			return (my_environ[i] + size + 1);
 	}
 	return (NULL);
 }

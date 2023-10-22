@@ -43,7 +43,7 @@ int exec_cmd(char **args)
 		}
 		else
         {
-            execve(getcmd, args, my_environ);
+            execve(getcmd, args, my_environ); /* Use my_environ instead of environ */
         }
 	}
 	else
