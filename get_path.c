@@ -34,10 +34,10 @@ char *get_path(char *getcmd)
 	for (i = 0; tab_path[i] != NULL; i++)
 	{
 		newpath[0] = 0;
-		_strcat(newpath, tab_path[i]);
-		_strcat(newpath, "/");
-		_strcat(newpath, getcmd);
-		if (stat(newpath, &st) == 0)
+        _strncat(newpath, tab_path[i], strlen(tab_path[i]));
+        _strncat(newpath, "/", 1);
+        _strncat(newpath, getcmd, strlen(getcmd));
+        if (stat(newpath, &st) == 0)
 		{
 			free(tab_path);
 			return (newpath);

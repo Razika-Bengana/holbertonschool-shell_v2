@@ -22,6 +22,7 @@ int _strcmp(char *s1, char *s2);
 int _strlen(const char *s);
 int _strncmp(const char *s1, const char *s2, int n);
 char *_strdup(const char *str);
+char *_strncat(char *dest, const char *src, size_t n);
 
 char *func_read(void);
 int exec_cmd(char **args);
@@ -33,6 +34,7 @@ void print_env(void);
 void ctrl_c(int signal);
 char **split_env(char *path);
 char *trim(char *str);
+
 
 /* New implementation */
 int func_cd(char **args);

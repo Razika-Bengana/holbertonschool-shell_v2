@@ -54,7 +54,7 @@ int main(void)
 		if (line == NULL || (_strcmp(line, "exit") == 0))
 		{
 			free(line);
-			exit(0);
+			return (0);
 		}
 		else if (_strcmp(line, "env") == 0)
 		{

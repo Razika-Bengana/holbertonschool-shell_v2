@@ -24,16 +24,17 @@ char *func_read(void)
 
 	if (len == -1)
 	{
-		free(line);
-		exit(0);
+        write(1, "\n", 1);
+        free(line);
+        return (NULL);
 	}
-	line[len - 1] = 0;
-	line = trim(line);
+    if (line[len - 1] == '\n' && line[1] != '\0')
+        line[len - 1] = '\0';
 
-	if (line[0] == '\n' || !line[0])
-	{
-		free(line);
-		return (NULL);
-	}
-	return (line);
+    if (line[0] == '\0')
+    {
+        printf("ffffffffff");
+        return (NULL);
+    }
+    return (line);
 }
